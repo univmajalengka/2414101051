@@ -1,0 +1,1110 @@
+/* =======================================================
+   assets/style.css (KODE FINAL DAN BERSIH)
+   ======================================================= */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* FONT IMPOR DARI GOOGLE FONTS */
+/* Pastikan font Playfair Display dan Cormorant Garamond juga digunakan jika diperlukan */
+
+/* =======================================================
+   NAVBAR & HEADER
+   ======================================================= */
+header {
+    background-color: #875A8B; /* Ungu Maroon */
+    padding: 15px 50px;
+    position: sticky; /* Membuat navbar tetap di atas */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd5ff;
+}
+
+/* Styling untuk Badge Keranjang di Navbar */
+#cart-count {
+    background-color: #ff5fa2; /* Warna pink cerah Landnic */
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px; 
+    border-radius: 12px;
+    margin-left: 5px;
+    vertical-align: top;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* assets/style.css */
+
+/* =======================================================
+   FOOTER (KODE FINAL)
+   ======================================================= */
+footer {
+    /* Gunakan warna ungu NAV BAR yang sama */
+    background-color: #875A8B; 
+    color: white;
+    text-align: center;
+    
+    /* PENTING: Hapus margin-top jika sebelumnya ada space putih di atasnya */
+    margin-top: 0 !important; 
+    
+    /* Hapus padding dari elemen footer utama */
+    padding: 0; 
+    width: 100%;
+}
+
+.footer-content {
+    /* Padding di sini untuk konten utama footer */
+    padding: 30px 20px; /* Kurangi padding vertikal agar footer lebih ramping */
+}
+
+.footer-bottom {
+    /* Bagian paling bawah (Hak Cipta) */
+    background-color: #724A75; /* Sedikit lebih gelap agar terlihat pemisah */
+    padding: 10px 20px; /* Jauh lebih ramping */
+    font-size: 0.85em;
+    color: #ffd5ff;
+}
+
+/* Tautan di Footer */
+.footer-content a {
+    color: #ffd5ff; /* Warna terang untuk tautan */
+    text-decoration: none;
+}
+.footer-links a {
+    color: #ffd5ff;
+}
+
+
+/* =======================================================
+   GENERAL & UTILITY
+   ======================================================= */
+.btn {
+    background-color: #ff5fa2; /* Pink Cerah */
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff3d8e;
+}
+
+
+/* =======================================================
+   HALAMAN LANDING/HERO (KODE FINAL YANG BERSIH)
+   ======================================================= */
+.hero {
+    height: 90vh; /* Tinggi Hero Section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    text-align: center;
+
+    /* Background Image & Overlay */
+    background-image: url('img/landnic.jpg'); /* Cek lagi: Gunakan 'img/trio.jpg' atau '../img/trio.jpg' */
+    background-size: cover; 
+    background-position: center top; 
+    background-repeat: no-repeat;
+    position: relative; 
+    z-index: 1;
+
+    /* PENTING UNTUK FULL WIDTH */
+    width: 100vw; 
+    left: 50%; 
+    right: 50%;
+    margin-left: -50vw; 
+    margin-right: -50vw;
+    
+    /* PENTING UNTUK MENEMPEL DENGAN FOOTER & HEADER */
+    margin-bottom: 0 !important; /* Hilangkan space di bawah (garis putih) */
+    
+    /* PENYESUAIAN HEADER FIXED */
+    margin-top: -65px; /* Angkat ke atas agar menempel ke navbar */
+    padding-top: 65px; /* Dorong konten agar tidak tertutup navbar */
+}
+
+/* OVERLAY UNTUK GAMBAR */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(135, 90, 139, 0.25); 
+    z-index: 2;
+}
+
+/* KONTEN HERO (Teks & Button) */
+.hero-content {
+    z-index: 3;
+    position: relative; 
+    color: white; /* Ganti warna teks agar terlihat */
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    font-weight: 800;
+    color: white; 
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5); 
+    margin-bottom: 5px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #c0abc0;
+    margin-bottom: 40px;
+}
+
+/* assets/style.css (Di bagian general) */
+html, body {
+    margin: 0;
+    padding: 0;
+    /* ... kode lainnya ... */
+}
+
+footer {
+    /* ... kode footer lainnya ... */
+    margin-top: 0 !important; /* Pastikan tidak ada space di atas footer */
+    padding-top: 20px; /* Padding di dalam footer untuk konten */
+}
+
+/* =======================================================
+   HALAMAN PRODUK
+   ======================================================= */
+
+/* ... di dalam assets/style.css ... */
+
+
+.produk-card .harga {
+    color: #8c5b89;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+/* 🚀 TEMPATKAN KODE BARU DI SINI 🚀 */
+
+/* =======================================================
+   STYLE UNTUK LINK TAMBAH KERANJANG (.btn-keranjang)
+   ======================================================= */
+
+.btn-keranjang {
+    display: block; 
+    width: 90%; 
+    margin: 15px auto 10px auto; 
+    
+    background-color: #8c5b89; /* Warna ungu produk */
+    color: white; 
+    text-decoration: none; 
+    text-align: center;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    border: none;
+    font-size: 1em;
+}
+
+.btn-keranjang:hover {
+    background-color: #6a3e6d; /* Warna ungu lebih gelap saat di-hover */
+}
+
+
+/* ... kode untuk WARNA OPSI dan HALAMAN KERANJANG ... */
+#produk {
+    padding: 60px 20px;
+    background-color: #fdf8f9;
+    text-align: center;
+}
+
+#produk h2 {
+    color: #8c5b89;
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+/* GRID PRODUK */
+.produk-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.produk-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.produk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.produk-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.produk-card h3 {
+    color: #333;
+    margin: 10px 0 5px;
+    font-size: 1.3em;
+}
+
+.produk-card p {
+    color: #555;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.produk-card .harga {
+    color: #8c5b89;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 15px 0;
+}
+
+/* WARNA OPSI */
+.warna-opsi {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.warna {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px #ccc;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.warna:hover {
+    transform: scale(1.1);
+}
+
+.warna.selected {
+    /* Desain untuk warna yang sedang dipilih */
+    border: 3px solid #FFD5FF; 
+    box-shadow: 0 0 5px rgba(255, 100, 200, 0.7); 
+    transform: scale(1.05);
+}
+
+/* BUTTON TAMBAH KERANJANG */
+.produk-card button {
+    background: #ff6699;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.produk-card button:hover {
+    background: #cc3366;
+}
+
+
+/* =======================================================
+   HALAMAN KERANJANG
+   ======================================================= */
+#keranjang-page {
+    padding: 60px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#keranjang-page h2 {
+    color: #8c5b89;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#cart-table th, #cart-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+#cart-table th {
+    background-color: #f8eaf1;
+    color: #8c5b89;
+    font-weight: 600;
+}
+
+#cart-table tr:hover {
+    background-color: #fff9fc;
+}
+
+/* Ringkasan Total */
+#cart-summary {
+    text-align: right;
+    padding: 20px 0;
+    border-top: 2px solid #8c5b89;
+}
+
+#cart-summary p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#total-harga-display {
+    color: #ff5fa2;
+}
+
+.checkout-btn {
+    padding: 12px 35px;
+    font-size: 1.1em;
+}
+
+
+/* =======================================================
+   HALAMAN CHECKOUT
+   ======================================================= */
+#checkout-page {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#checkout-page h2 {
+    color: #8c5b89;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Detail Pengiriman */
+#shipping-details h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 1.5em;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+#checkout-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+#checkout-form input[type="text"], 
+#checkout-form input[type="email"], 
+#checkout-form input[type="tel"],
+#checkout-form select, 
+#checkout-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+#checkout-form .btn {
+    margin-top: 30px;
+    width: 100%;
+    font-size: 1.1em;
+}
+
+.small-info {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Ringkasan Pesanan */
+#order-summary-box {
+    background: #fdf8f9;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+#order-summary-box h3 {
+    color: #8c5b89;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #e0d0d5;
+    padding-bottom: 10px;
+}
+
+#checkout-items {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item-detail {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.checkout-total p {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+#final-total-display {
+    color: #ff5fa2;
+    font-size: 1.2em;
+}
+
+/* Style untuk Opsi Pembayaran */
+#payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#payment-options label {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: normal;
+    background-color: #fcfcfc;
+    transition: 0.2s;
+}
+
+#payment-options label:hover {
+    background-color: #f8f0f3;
+    border-color: #ff5fa2;
+}
+
+#payment-options input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #ff5fa2;
+}
+
+
+/* =======================================================
+   HALAMAN NOTA/INVOICE
+   ======================================================= */
+#nota-page {
+    padding: 60px 40px 100px 40px; 
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#nota-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#nota-page h2 {
+    color: #8c5b89;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.nota-box {
+    text-align: left;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+}
+
+.nota-box h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 8px;
+}
+
+/* Detail Item */
+#nota-items-list {
+    display: grid;
+    gap: 10px;
+}
+
+.nota-item-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1em;
+    padding: 5px 0;
+    border-bottom: 1px dotted #f8f8f8;
+}
+
+.harga-item {
+    font-weight: 500;
+}
+
+/* Ringkasan Total */
+.total-box p {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.total-box hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+.grand-total {
+    font-size: 1.6em !important;
+    font-weight: bold !important;
+    color: #8c5b89;
+}
+
+.total-harga-display {
+    color: #ff5fa2;
+}
+
+.call-to-action {
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+.call-to-action .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+/* Instruksi Pembayaran */
+.payment-instruction-box {
+    text-align: left;
+    background-color: #f7f7f7;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.payment-instruction-box h4 {
+    color: #ff5fa2;
+    margin-top: 0;
+}
+
+.warning-text {
+    font-size: 0.9em;
+    color: #cc0000;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+/* =======================================================
+   MEDIA CETAK (PRINT) - Membuat Nota Rapi di Kertas (FINAL DAN BERSIH)
+   ======================================================= */
+@media print {
+    /* 1. Sembunyikan elemen yang tidak perlu dicetak */
+    header, 
+    footer, 
+    .call-to-action, 
+    .sub-heading {
+        display: none !important;
+    }
+
+    /* 2. Pastikan kontainer utama mengambil seluruh lebar kertas */
+    body {
+        margin: 0; 
+        padding: 0;
+        font-size: 11pt; 
+        color: #000;
+    }
+
+    /* 3. Atur ulang lebar kontainer nota & HAPUS SEMUA BOX-SHADOW/BORDER */
+    #nota-container {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none; 
+        padding: 20px; 
+        margin: 0 auto;
+        border: none;
+    }
+
+    /* 4. HAPUS BORDER PADA SEMUA KOTAK NOTA DI VERSI CETAK (Hanya garis pemisah putus-putus) */
+    .nota-box {
+        margin-bottom: 0; 
+        padding: 10pt 0; 
+        border: none !important; 
+        border-bottom: 1px dashed #999 !important; 
+        page-break-inside: avoid;
+    }
+    
+    /* Tambahkan margin bawah hanya pada item terakhir di dalam kotak agar ada jarak ke bagian selanjutnya */
+    #ringkasan-pembeli p,
+    .nota-item-row {
+        margin-bottom: 5px;
+    }
+    
+    /* KOTAK TOTAL DAN INSTRUKSI: HAPUS GARIS BAWAH KHUSUS */
+    #nota-total,
+    #instruksi-pembayaran {
+        border-bottom: none !important;
+        margin-top: 10pt;
+    }
+    
+    /* 5. KHUSUS INSTRUKSI PEMBAYARAN: HAPUS SEMUA KOTAK/BORDER DAN GANTI DENGAN TEKS TERIMA KASIH */
+    .payment-instruction-box {
+        border: none !important;
+        padding: 0 !important;
+        margin: 15pt 0 0 0 !important;
+        background-color: #fff !important; 
+        page-break-inside: avoid;
+        text-align: center; /* Teks terima kasih di tengah */
+        height: auto !important; /* Pastikan tinggi kotak bisa menampung teks baru */
+        min-height: 0 !important;
+        line-height: 1.5;
+        color: #333;
+        font-size: 11pt;
+    }
+    
+    /* Sembunyikan semua konten asli di dalam payment-instruction-box */
+    .payment-instruction-box * {
+        display: none !important;
+    }
+    
+    /* Tambahkan teks terima kasih menggunakan pseudo-element ::after */
+    .payment-instruction-box::after {
+        content: "Terima kasih sudah berbelanja di Landnic, pesanan Anda akan segera diproses."; 
+        display: block;
+        margin-top: 20pt;
+        font-style: italic;
+        font-weight: 500;
+        color: #555;
+    }
+    
+    /* 6. Sembunyikan judul utama yang duplikat saat cetak */
+    #nota-page h2 {
+        display: none;
+    }
+}
+/* =======================================================
+    assets/style.css (KODE FINAL DAN BERSIH)
+    ======================================================= */
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* =======================================================
+    NAVBAR & HEADER
+    ======================================================= */
+header {
+    background-color: #875A8B; /* Ungu Maroon */
+    padding: 15px 50px;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd5ff;
+}
+
+/* Styling untuk Badge Keranjang di Navbar */
+#cart-count {
+    background-color: #ff5fa2; /* Warna pink cerah Landnic */
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px; 
+    border-radius: 12px;
+    margin-left: 5px;
+    vertical-align: top;
+    line-height: 1;
+    display: inline-block;
+}
+
+/* =======================================================
+    FOOTER
+    ======================================================= */
+footer {
+    background-color: #875A8B;
+    color: white;
+    text-align: center;
+    padding: 40px 20px 10px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.footer-bottom {
+    background-color: #6a3e6d;
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+/* =======================================================
+    HALAMAN TENTANG KAMI
+    ======================================================= */
+#about-us {
+    padding: 80px 40px;
+    background-color: #fcf6f9; /* Latar belakang yang lembut */
+    min-height: 70vh;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about-us h2 {
+    color: #8c5b89;
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.about-text h3 {
+    color: #ff5fa2; /* Pink cerah untuk sub-judul */
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f8eaf1;
+    padding-bottom: 5px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.about-text .final-tagline {
+    font-size: 1.25em; 
+    font-weight: 600;
+    color: #ff5fa2; 
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px dashed #e0d0d5; 
+    text-align: center;
+}
+
+/* =======================================================
+    GENERAL & UTILITY (Tambahkan kode CSS lain di bawah)
+    ======================================================= */
+.btn {
+    background-color: #ff5fa2; 
+    color: white;
+    padding: 15px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ff3d8e;
+}
+/* =======================================================
+   MEDIA CETAK (PRINT) - Membuat Nota Rapi di Kertas (FINAL DAN BERSIH)
+   ======================================================= */
+@media print {
+    /* 1. Sembunyikan elemen yang tidak perlu dicetak */
+    header, 
+    footer, 
+    .call-to-action, 
+    .sub-heading {
+        display: none !important;
+    }
+
+    /* 2. Pastikan kontainer utama mengambil seluruh lebar kertas */
+    body {
+        margin: 0; 
+        padding: 0;
+        font-size: 11pt; 
+        color: #000;
+    }
+
+    /* 3. Atur ulang lebar kontainer nota & HAPUS SEMUA BOX-SHADOW/BORDER */
+    #nota-container {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none; 
+        padding: 20px; 
+        margin: 0 auto;
+        border: none;
+    }
+
+    /* 4. HAPUS BORDER PADA SEMUA KOTAK NOTA DI VERSI CETAK (Hanya garis pemisah putus-putus) */
+    .nota-box {
+        margin-bottom: 0; 
+        padding: 10pt 0; 
+        border: none !important; 
+        border-bottom: 1px dashed #999 !important; 
+        page-break-inside: avoid;
+    }
+    
+    /* Tambahkan margin bawah hanya pada item terakhir di dalam kotak agar ada jarak ke bagian selanjutnya */
+    #ringkasan-pembeli p,
+    .nota-item-row {
+        margin-bottom: 5px;
+    }
+    
+    /* KOTAK TOTAL DAN INSTRUKSI: HAPUS GARIS BAWAH KHUSUS */
+    #nota-total,
+    #instruksi-pembayaran {
+        border-bottom: none !important;
+        margin-top: 10pt;
+    }
+    
+    /* 5. KHUSUS INSTRUKSI PEMBAYARAN: HAPUS SEMUA KOTAK/BORDER DAN GANTI DENGAN TEKS TERIMA KASIH */
+    .payment-instruction-box {
+        border: none !important;
+        padding: 0 !important;
+        margin: 15pt 0 0 0 !important;
+        background-color: #fff !important; 
+        page-break-inside: avoid;
+        text-align: center; /* Teks terima kasih di tengah */
+        height: auto !important; /* Pastikan tinggi kotak bisa menampung teks baru */
+        min-height: 0 !important;
+        line-height: 1.5;
+        color: #333;
+        font-size: 11pt;
+    }
+    
+    /* Sembunyikan semua konten asli di dalam payment-instruction-box */
+    .payment-instruction-box * {
+        display: none !important;
+    }
+    
+    /* Tambahkan teks terima kasih menggunakan pseudo-element ::after */
+    .payment-instruction-box::after {
+        content: "Terima kasih sudah datang ke Landnic, pesanan Anda akan segera diproses."; 
+        display: block;
+        margin-top: 20pt;
+        font-style: italic;
+        font-weight: 500;
+        color: #555;
+    }
+    
+    /* 6. Sembunyikan judul utama yang duplikat saat cetak */
+    #nota-page h2 {
+        display: none;
+    }
+}
+/* =======================================================
+   HALAMAN TENTANG KAMI
+   ======================================================= */
+#about-us {
+    padding: 80px 40px;
+    background-color: #fcf6f9; /* Latar belakang yang lembut */
+    min-height: 70vh;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#about-us h2 {
+    color: #8c5b89;
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.about-text h3 {
+    color: #ff5fa2; /* Pink cerah untuk sub-judul */
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f8eaf1;
+    padding-bottom: 5px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.visi-misi {
+    text-align: center;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.visi-misi h3 {
+    color: #8c5b89;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* =======================================================
+   ADMIN SECRET LINK (Hanya terlihat oleh yang tahu)
+   ======================================================= */
+#admin-secret-link {
+    /* Gunakan warna ungu footer (hampir tidak terlihat) */
+    color: #875A8B; 
+    font-size: 10px; /* Sedikit lebih besar agar mudah diklik, tapi tetap kecil */
+    opacity: 0.15; /* Sedikit transparan agar samar */
+    text-decoration: none;
+    display: inline-block; /* Agar berada di baris yang sama dengan judul, tapi tetap di bawah */
+    margin-left: 5px; /* Sedikit geser ke kanan */
+    transition: opacity 0.3s;
+}
+
+#admin-secret-link:hover {
+    opacity: 0.8; /* Muncul jelas saat di-hover/di-klik */
+    color: white; /* Beri warna putih agar terlihat saat di-hover */
+}
