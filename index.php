@@ -10,8 +10,6 @@
 
     <!-- HEADER -->
     <?php include "includes/header.php"; ?>
-
-    <!-- HERO / JUMBOTRON -->
     <section class="hero">
         <div class="hero-content">
             <h1>Selamat Datang di Landnic</h1>

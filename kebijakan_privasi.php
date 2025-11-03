@@ -1,5 +1,4 @@
 <?php 
-    // Pastikan menggunakan 'includes' di sini
     require_once __DIR__ . '/includes/header.php'; 
 ?>
 
@@ -41,6 +40,5 @@
 </main>
 
 <?php 
-    // Pastikan menggunakan 'includes' di sini
     require_once __DIR__ . '/includes/footer.php'; 
 ?>

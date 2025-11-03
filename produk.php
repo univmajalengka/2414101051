@@ -17,7 +17,7 @@ include 'koneksi.php';
   <div class="produk-container">
     <?php
     $sql = "SELECT id_produk, nama_produk, deskripsi, warna, harga, foto, stok FROM produk WHERE stok > 0 ORDER BY id_produk DESC";
-    $result = mysqli_query($koneksi, $sql);
+    $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
       while ($p = mysqli_fetch_assoc($result)) {

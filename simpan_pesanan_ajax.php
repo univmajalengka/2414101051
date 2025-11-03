@@ -1,25 +1,27 @@
-<?php include '../koneksi.php'; 
+<?php
+session_start(); // wajib kalau pakai $_SESSION
+include '../koneksi.php';
 
 header('Content-Type: application/json');
 
-// --- Cek Koneksi (Jika Gagal, PHP langsung merespons JSON Error) ---
-if (!isset($conn) || $conn->connect_error) {
-    $conn = null;
-    echo json_encode(['status' => 'error', 'message' => 'Koneksi database gagal. Error: ' . ($conn->connect_error ?? 'Variabel koneksi tidak terdefinisi.')]);
+// cek koneksi
+if (!isset($koneksi) || $koneksi->connect_error) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'Koneksi database gagal. Error: ' . ($koneksi->connect_error ?? 'Variabel koneksi tidak terdefinisi.')
+    ]);
     exit();
 }
 
-// --- Ambil dan Validasi Data ---
 $json_data = file_get_contents('php://input');
 $data = json_decode($json_data, true);
 
 if (!isset($data['action']) || $data['action'] !== 'simpan_pesanan' || empty($data['keranjang_items'])) {
     echo json_encode(['status' => 'error', 'message' => 'Data tidak lengkap atau permintaan tidak valid.']);
-    $conn->close();
+    $koneksi->close();
     exit();
 }
 
-// --- Casting Data ---
 $nama_pelanggan = $data['nama'] ?? '';
 $telepon = $data['telepon'] ?? '';
 $alamat_kirim = $data['alamat_lengkap'] ?? ''; 
@@ -33,24 +35,21 @@ $items_keranjang = json_decode($data['keranjang_items'], true);
 
 if (empty($items_keranjang) || $total_akhir <= 0) {
     echo json_encode(['status' => 'error', 'message' => 'Keranjang kosong atau total harga tidak valid.']);
-    $conn->close();
+    $koneksi->close();
     exit();
 }
 
 $id_pelanggan = $_SESSION['user_id'] ?? 0; 
 $status_pesanan = 'Baru'; 
 
-// --- Mulai Transaksi ---
-$conn->begin_transaction();
+$koneksi->begin_transaction();
 
 try {
-    // Kolom di tabel pesanan yang Anda miliki (termasuk telepon, ongkos_kirim, metode_pembayaran, kurir)
-    $stmt = $conn->prepare("INSERT INTO pesanan (
+    $stmt = $koneksi->prepare("INSERT INTO pesanan (
         id_pelanggan, nama_pelanggan, telepon, tanggal_pesanan, 
         total_harga, ongkos_kirim, status_pesanan, metode_pembayaran, alamat_kirim, kurir
     ) VALUES (?, ?, ?, NOW(), ?, ?, ?, ?, ?, ?)");
     
-    // Total 10 parameter yang di-bind: i, s, s, d, d, s, s, s, s, s
     $stmt->bind_param("issddsssss", 
         $id_pelanggan,          
         $nama_pelanggan,        
@@ -67,11 +66,10 @@ try {
         throw new Exception("Gagal menyimpan pesanan utama: " . $stmt->error);
     }
     
-    $id_pesanan_db = $conn->insert_id;
+    $id_pesanan_db = $koneksi->insert_id;
     $stmt->close();
 
-    // Kolom di tabel detail_pesanan yang Anda miliki
-    $stmt_detail = $conn->prepare("INSERT INTO detail_pesanan (
+    $stmt_detail = $koneksi->prepare("INSERT INTO detail_pesanan (
         id_pesanan, id_produk, nama_produk, jumlah, harga
     ) VALUES (?, ?, ?, ?, ?)");
 
@@ -86,7 +84,6 @@ try {
              throw new Exception("Data kuantitas atau harga salah untuk produk: " . $nama_produk_full);
         }
 
-        // Binding: i, i, s, i, d
         $stmt_detail->bind_param("iisid", 
             $id_pesanan_db,         
             $id_produk,             
@@ -102,22 +99,19 @@ try {
     
     $stmt_detail->close();
     
-    $conn->commit();
-    
-    // --- Respons Sukses ---
+    $koneksi->commit();
     $id_pesanan_nota = 'LDN-' . $id_pesanan_db;
     
     echo json_encode(['status' => 'success', 'id_pesanan_baru' => $id_pesanan_nota]);
     
 } catch (Exception $e) {
-    if ($conn) {
-        $conn->rollback();
+    if ($koneksi) {
+        $koneksi->rollback();
     }
-    // --- Respons Error ---
     echo json_encode(['status' => 'error', 'message' => "Kesalahan PHP/DB: " . $e->getMessage()]);
     
 } finally {
-    if ($conn) {
-        $conn->close();
+    if ($koneksi) {
+        $koneksi->close();
     }
 }
