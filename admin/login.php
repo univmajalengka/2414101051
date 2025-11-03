@@ -1,5 +1,4 @@
 <?php
-// admin/login.php
 session_start();
 
 $error = '';
@@ -13,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($username === $default_username && $password === $default_password) {
         $_SESSION['admin_logged_in'] = true;
         $_SESSION['admin_username'] = $username;
-        
-        // Arahkan ke Dashboard Admin (file di folder yang sama)
+    
         header('Location: admin.php'); 
         exit();
     } else {
@@ -30,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Landnic Hijab | Login Admin</title>
     <link rel="stylesheet" href="../assets/style.css"> 
     <style>
-        /* ... (Gaya CSS tetap sama) ... */
         body {
             background-color: #f4f4f9;
             display: flex;
@@ -63,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .login-container button {
             width: 100%;
             padding: 12px;
-            background-color: #e9e1eaff;
+            background-color: #875A8B;
             color: white;
             border: none;
             border-radius: 5px;
@@ -72,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             transition: background-color 0.3s;
         }
         .login-container button:hover {
-            background-color: #e1dee1ff;
+            background-color: #f4ededff;
         }
         .error-message {
             color: red;

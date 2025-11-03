@@ -1,71 +1,70 @@
 <?php
-// admin/admin.php
 session_start();
+include '../koneksi.php'; 
 
-// =======================================================
-// OTENTIKASI: Jika admin belum login, alihkan ke login.php
-// =======================================================
+// --- Proteksi login admin ---
 if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
-    header('Location: login.php'); // login.php ada di folder yang sama
+    header('Location: login.php');
     exit();
 }
 
 $username = $_SESSION['admin_username'] ?? 'Administrator';
+
+// --- Query data dashboard dengan pengecekan error ---
+$total_produk = 0;
+$pesanan_baru = 0;
+$total_penjualan = 0;
+
+if ($result = $conn->query("SELECT COUNT(*) AS total_produk FROM produk")) {
+    $total_produk = $result->fetch_assoc()['total_produk'];
+    $result->free();
+}
+
+if ($result = $conn->query("SELECT COUNT(*) AS pesanan_baru FROM pesanan WHERE status_pesanan='Baru'")) {
+    $pesanan_baru = $result->fetch_assoc()['pesanan_baru'];
+    $result->free();
+}
+
+if ($result = $conn->query("SELECT SUM(total_harga) AS total_penjualan FROM pesanan WHERE status_pesanan='Selesai'")) {
+    $row = $result->fetch_assoc();
+    $total_penjualan = $row['total_penjualan'] ?? 0;
+    $result->free();
+}
+
+$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landnic Hijab | Admin Dashboard</title>
-    <link rel="stylesheet" href="../assets/style.css"> 
-    <style>
-        /* Gaya dasar untuk Dashboard Admin */
-        body {
-            background-color: #f4f4f9;
-        }
-        .admin-dashboard {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            padding-top: 85px; 
-            min-height: 80vh;
-        }
-        .admin-sidebar {
-            width: 250px;
-            float: left;
-            padding-right: 20px;
-            border-right: 1px solid #eee;
-        }
-        .admin-content {
-            margin-left: 270px;
-        }
-        .admin-sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-        .admin-sidebar ul li a {
-            display: block;
-            padding: 10px 0;
-            text-decoration: none;
-            color: #875A8B;
-            font-weight: 600;
-        }
-        .admin-sidebar ul li a:hover {
-            color: #ff5fa2;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landnic Hijab | Admin Dashboard</title>
+<link rel="stylesheet" href="../assets/admin.css">
 </head>
 <body>
 
-
 <div class="admin-dashboard">
-    <h2>Selamat Datang, <?php echo htmlspecialchars($username); ?>!</h2>
-    <p>Ini adalah halaman utama Dashboard Administrasi Landnic Hijab.</p>
-    
+
+    <div class="welcome-box">
+        <h2>Selamat Datang, <?= htmlspecialchars($username); ?>!</h2>
+        <p>Ini adalah halaman utama Dashboard Administrasi Landnic Hijab.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Total Produk</h3>
+            <p><?= $total_produk ?></p>
+        </div>
+        <div class="card">
+            <h3>Pesanan Baru</h3>
+            <p><?= $pesanan_baru ?></p>
+        </div>
+        <div class="card">
+            <h3>Total Penjualan</h3>
+            <p>Rp <?= number_format($total_penjualan,0,',','.') ?></p>
+        </div>
+    </div>
+
     <div class="admin-sidebar">
         <h4>Menu Cepat</h4>
         <ul>
@@ -79,33 +78,24 @@ $username = $_SESSION['admin_username'] ?? 'Administrator';
     <div class="admin-content">
         <?php
         $page = $_GET['page'] ?? 'dashboard';
-        
-        // Router sederhana untuk konten
         switch ($page) {
-            case 'produk':
-                include 'kelola_produk.php'; 
-                break;
-            case 'pesanan':
-                include 'kelola_pesanan.php'; 
-                break;
+            case 'produk': include 'kelola_produk.php'; break;
+            case 'pesanan': include 'kelola_pesanan.php'; break;
             case 'logout':
-                // Logout logic
                 session_unset();
                 session_destroy();
-                // Harap diperhatikan: Arahkan ke index.php di folder utama
-                header('Location: ../index.php'); 
+                header('Location: ../index.php');
                 exit();
             case 'dashboard':
             default:
-                echo '<h3>Statistik Ringkas</h3><p>Total Produk: 12</p><p>Pesanan Baru: 3</p><p>Total Penjualan: Rp 1.500.000</p>';
-                break;
+                echo ''; 
         }
         ?>
     </div>
-    <div style="clear: both;"></div>
+    <div style="clear:both;"></div>
+
 </div>
-
-
 
 </body>
 </html>
+

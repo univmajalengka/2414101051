@@ -1,29 +1,25 @@
 <?php
-// admin/tambah_produk.php
-// File ini di-include oleh admin/admin.php, sehingga $koneksi sudah tersedia.
+
 include '../koneksi.php';
-// Cek apakah formulir telah disubmit
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ambil data dan terapkan keamanan (mysqli_real_escape_string)
+
     $nama = mysqli_real_escape_string($koneksi, $_POST['nama_produk']);
     $deskripsi = mysqli_real_escape_string($koneksi, $_POST['deskripsi']);
     $warna = mysqli_real_escape_string($koneksi, $_POST['warna']);
-    $harga = $_POST['harga']; // Angka
+    $harga = $_POST['harga']; 
     $stok = $_POST['stok'];
     
-    // UPLOAD GAMBAR
-    $foto_nama = $_FILES['gambar']['name']; // NAMA INPUT FILE DISESUAIKAN DENGAN FORM DI BAWAH
+    $foto_nama = $_FILES['gambar']['name']; 
     $foto_tmp = $_FILES['gambar']['tmp_name'];
     
     $status_upload = true;
     $foto_baru = '';
 
-    // Proses upload foto
     if (!empty($foto_nama)) {
         $ekstensi = pathinfo($foto_nama, PATHINFO_EXTENSION);
         $foto_baru = uniqid('prod_') . '.' . $ekstensi;
-        
-        // Folder tujuan: '../img/produk/' 
+    
         $folder_tujuan = '../img/produk/' . $foto_baru;
         
         if (!move_uploaded_file($foto_tmp, $folder_tujuan)) {
@@ -36,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if ($status_upload) {
-        // PERBAIKAN: Menggunakan $koneksi (prosedural)
+
         $query = "INSERT INTO produk (nama_produk, deskripsi, warna, harga, foto, stok) 
                   VALUES ('$nama', '$deskripsi', '$warna', '$harga', '$foto_baru', '$stok')";
 
         if (mysqli_query($koneksi, $query)) {
-            // Redirect kembali ke halaman daftar produk
+        
             header('Location: admin.php?page=produk&status=success');
             exit();
         } else {
