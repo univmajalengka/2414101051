@@ -1,164 +1,241 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kanaga Hill - Wisata Majalengka</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Curug Muara Jaya (Curug Apuy) — Majalengka</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-
-  <!-- FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Curug Muara Jaya (Curug Apuy) Majalengka — lautan awan, sunrise, camping, canyonering. Jam buka 07:00–17:00.">
 </head>
-
 <body>
 
-<header>
-  <div class="container nav-wrap">
-    <h2 class="logo">Kanaga Hill</h2>
+<header id="siteHeader" class="fade-up" role="banner">
+  <div class="container header-row">
+    <div class="brand" aria-hidden="false">
+      <div class="brand-title">Curug Muara Jaya 🌿</div>
+      <div class="brand-sub">Curug Apuy · Argamukti, Argapura — Majalengka</div>
+    </div>
 
-    <nav>
+    <nav id="mainNav" class="main-nav" role="navigation" aria-label="Main navigation">
       <a href="#beranda">Beranda</a>
       <a href="#about">About</a>
       <a href="#objek">Objek Wisata</a>
-      <a href="#paket">Paket Wisata</a>
-      <a href="#video">Video</a>
-      <a href="#pemesanan">Pemesanan</a>
+      <a href="#fasilitas">Fasilitas</a>
+      <a href="#tarif">Tarif & Paket</a>
       <a href="#galeri">Galeri</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="#pemesanan">Pemesanan</a>
     </nav>
 
-    <div class="burger">☰</div>
+    <button id="burger" class="burger" aria-label="Buka menu">☰</button>
   </div>
 </header>
 
-<!-- HERO / BERANDA -->
-<section id="beranda" class="hero fade-up">
-  <img src="img/kanagaa.jpg" class="hero-img">
-  <div class="hero-text">
-    <h1>Selamat Datang di Kanaga Hill</h1>
-    <p>Kampung Ciinjuk, Desa Cipulus, Cikijing – Majalengka  
-    Tiket Masuk: <b>15K/orang</b> · Camping <b>20K/orang</b></p>
+<!-- HERO (fullscreen 100vh, landscape close-up image #2) -->
+<section id="beranda" class="hero" role="region" aria-label="Beranda">
+  <div class="hero-slider">
+    <div class="slide active" style="background-image:url('img/bg1.jpg')">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h1 class="hero-title">🌿 Curug Muara Jaya (Curug Apuy)</h1>
+        <p class="hero-lead">Air terjun bertingkat ±73 m di kaki Gunung Ciremai — panorama dramatis, kolam jernih, dan spot foto estetik.</p>
 
-    <a href="#paket" class="btn">Lihat Paket Camping</a>
+        <div class="hero-meta">
+          <span>📍 Kampung Apuy, Desa Argamukti, Argapura, Majalengka</span>
+          <span>🕗 Jam buka: <strong>07:00 – 17:00 WIB</strong></span>
+          <span>🎟 Dewasa Rp15.000 · Anak Rp5.000 · Camping Rp20.000</span>
+        </div>
+
+        <div class="cta">
+          <a class="btn primary" href="#tarif">🏕️ Lihat Tarif & Paket</a>
+          <a class="btn outline" href="#galeri">📸 Galeri</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- extra slide (optional) -->
+    <div class="slide" style="background-image:url('img/bg2.jpg')">
+      <div class="slide-overlay"></div>
+      <div class="slide-content">
+        <h1 class="hero-title">💧 Air Terjun Deras & Suasana Sejuk</h1>
+        <p class="hero-lead">Derasnya aliran air dari ketinggian menghadirkan suasana tenang, sejuk, dan menenangkan.</p>
+        <div class="cta">
+          <a class="btn primary" href="#pemesanan">📞 Pesan Guide</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-controls" aria-hidden="true">
+    <button id="prev">‹</button>
+    <button id="next">›</button>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section fade-up">
-  <h2 class="title">Tentang Kanaga Hill</h2>
-  <p class="desc">
-    Kanaga Hill berada di kaki Gunung Ciremai dengan ketinggian 1300–1450 mdpl.
-    Destinasi ini terkenal dengan lautan awan pagi hari, hutan pinus, suasana sejuk,
-    dan area camping luas yang sangat cocok untuk healing.
-  </p>
+<section id="about" class="section section-card fade-up" role="region" aria-label="Tentang">
+  <div class="container">
+    <h2>🌿 Sekilas Tentang Curug Muara Jaya</h2>
+    <p>
+      Curug Muara Jaya (dikenal juga Curug Apuy) adalah objek wisata air terjun bertingkat di lereng Gunung Ciremai dengan total ketinggian sekitar <strong>73 meter</strong>.
+      Curug ini menawarkan panorama tebing, lembah, dan kolam penampung yang berasal dari mata air pegunungan asli — sangat sejuk dan instagramable.
+    </p>
+
+    <h3>✨ Daya Tarik</h3>
+    <ul class="dot-list">
+      <li>🌊 Air terjun bertingkat (60m + 13m)</li>
+      <li>📸 Banyak spot foto: jembatan, bebatuan eksotis, tebing hijau</li>
+      <li>🌄 Area duduk santai dengan pemandangan pegunungan</li>
+      <li>🌿 Jalur trekking sejuk dengan pepohonan dan hamparan kebun di sepanjang perjalanan</li>
+    </ul>
+  </div>
 </section>
 
-<!-- OBJEK WISATA -->
-<section id="objek" class="section fade-up">
-  <h2 class="title">Objek Wisata</h2>
+<!-- OBEK (portrait cards 9:16 small) -->
+<section id="objek" class="section fade-up" role="region" aria-label="Objek Wisata">
+  <div class="container">
+    <h2>🌿 Objek Wisata & Spot Foto</h2>
 
-  <div class="objek-grid">
-    <div class="objek-card">
-      <img src="img/awan.jpg">
-      <p>Lautan Awan</p>
-    </div>
+    <div class="objek-grid">
+      <div class="portrait-card fade-left">
+        <img src="img/objek2.jpg" alt="Air Terjun">
+        <h3>🌫 Air Terjun</h3>
+      </div>
 
-    <div class="objek-card">
-      <img src="img/kabut2.jpg">
-      <p>Hutan Pinus</p>
-    </div>
+      <div class="portrait-card fade-right">
+        <img src="img/objek5.jpg" alt="Canyoneering">
+        <h3>🌊 Canyoneering</h3>
+      </div>
 
-    <div class="objek-card">
-      <img src="img/sunrise.jpg">
-      <p>Spot Sunrise</p>
+      <div class="portrait-card fade-left">
+        <img src="img/galeri 3.jpg" alt="Jembatan">
+        <h3>🌉 Jembatan Spot Foto</h3>
+      </div>
+
+      <div class="portrait-card fade-right">
+        <img src="img/objek7.jpg" alt="Taman">
+        <h3>🍃 Area Santai</h3>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- PAKET -->
-<section id="paket" class="section fade-up">
-  <h2 class="title">Paket Camping</h2>
-
-  <div class="paket-grid">
-
-    <div class="paket-card">
-      <img src="img/paket 2.jpg">
-      <h3>Paket Complete 2 Orang — 280K</h3>
-      <ul>
-        <li>Tenda kapasitas 4</li>
-        <li>Sudah termasuk bongkar-pasang</li>
-        <li>Foam matras</li>
-        <li>Sleeping bag ×2</li>
-        <li>Tikar</li>
-        <li>Kursi lipat 2 + meja lipat</li>
-        <li>Kompor portable + gas</li>
-        <li>Cooking set</li>
-        <li>Lampu + terminal listrik</li>
-      </ul>
-    </div>
-
-    <div class="paket-card">
-      <img src="img/paket 4.jpg">
-      <h3>Paket Complete 4 Orang — 350K</h3>
-      <ul>
-        <li>Tenda kapasitas 4</li>
-        <li>Bongkar-pasang tenda</li>
-        <li>Foam matras</li>
-        <li>Sleeping bag ×4</li>
-        <li>Tikar</li>
-        <li>Kursi lipat 4 + meja lipat</li>
-        <li>Kompor portable + gas</li>
-        <li>Cooking set</li>
-        <li>Lampu + terminal listrik</li>
-      </ul>
-    </div>
-
+<!-- FASILITAS -->
+<section id="fasilitas" class="section section-card fade-up" role="region" aria-label="Fasilitas">
+  <div class="container">
+    <h2>🏕️ Fasilitas</h2>
+    <ul class="dot-list">
+      <li>🚻 Toilet umum & kamar bilas</li>
+      <li>🕌 Mushola & gazebo</li>
+      <li>☕ Warung makan lokal</li>
+      <li>🅿️ Parkir luas & jalur setapak aman</li>
+      <li>⛺ Sewa perlengkapan camping & area camping</li>
+    </ul>
   </div>
 </section>
 
-<!-- VIDEO -->
-<section id="video" class="section fade-up">
-  <h2 class="title">Video YouTube</h2>
+<!-- TARIF & PAKET -->
+<section id="tarif" class="section fade-up" role="region" aria-label="Tarif dan Paket">
+  <div class="container">
+    <h2>💳 Tarif & Paket</h2>
 
-  <div class="video-wrap">
-    <iframe width="800" height="450" 
-      src="https://www.youtube.com/embed/GvmbiGAoqEs" 
-      frameborder="0" allowfullscreen>
-    </iframe>
+    <div class="pricing-grid">
+      <div class="price-card fade-up">
+        <h3>🎟 Tiket Masuk</h3>
+        <ul class="dot-list">
+          <li>Dewasa: <strong>Rp15.000</strong></li>
+          <li>Anak-anak: <strong>Rp5.000</strong></li>
+          <li>Camping: <strong>Rp20.000</strong></li>
+        </ul>
+      </div>
+
+      <div class="price-card fade-up">
+        <h3>🧗 Paket & Aktivitas</h3>
+        <ul class="dot-list">
+          <li>Paket camping sederhana — mulai Rp20.000/orang</li>
+          <li><strong>Canyoneering (guide + peralatan)</strong> — Rp200.000/orang</li>
+          <li>Paket grup / keluarga — hubungi pengelola</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- GALERI -->
-<section id="galeri" class="section fade-up">
-  <h2 class="title">Galeri</h2>
+<!-- GALERI: Video besar di atas, portrait grid 3 kolom di bawah -->
+<section id="galeri" class="section fade-up" role="region" aria-label="Galeri dan Video">
+  <div class="container">
+    <h2>📸 Galeri & Video</h2>
 
-  <div class="galeri-grid">
-    <img src="img/dieng.jpg">
-    <img src="img/malam2.jpg">
-    <img src="img/kanaga.jpg">
-    <img src="img/pinusss.jpg">
+    <div class="video-block">
+      <div class="video-wrap card-soft">
+        <iframe src="https://www.youtube.com/embed/w2vTBOpyNmA" title="Video Curug Muara Jaya" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="portrait-gallery">
+      <div class="pg-item fade-up"><img src="img/galeri 1.jpg" alt="Galeri 1"></div>
+      <div class="pg-item fade-up"><img src="img/galeri7.jpg" alt="Galeri 2"></div>
+      <div class="pg-item fade-up"><img src="img/galeri10.jpg" alt="Galeri 3"></div>
+      <div class="pg-item fade-up"><img src="img/objek1.jpg" alt="Galeri 4"></div>
+      <div class="pg-item fade-up"><img src="img/galeri 5.jpg" alt="Galeri 5"></div>
+      <div class="pg-item fade-up"><img src="img/objek3.jpg" alt="Galeri 6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOKASI / MAPS -->
+<section id="lokasi" class="section fade-up" role="region" aria-label="Lokasi">
+  <div class="container">
+    <h2>📍 Lokasi & Akses</h2>
+    <p class="muted">
+      Alamat: Kampung Apuy, Desa Argamukti, Kecamatan Argapura, Kabupaten Majalengka.  
+      Akses jalan cukup baik; sekitar <strong>23 km</strong> dari pusat Kota Majalengka dengan pemandangan hijau sepanjang perjalanan.
+    </p>
+
+    <div class="map-wrap card-soft">
+      <iframe
+        src="https://www.google.com/maps?q=-6.9126356306,108.3524787694&z=14&output=embed"
+        width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
   </div>
 </section>
 
 <!-- PEMESANAN -->
-<section id="pemesanan" class="section fade-up">
-  <h2 class="title">Pemesanan</h2>
+<section id="pemesanan" class="section fade-up" role="region" aria-label="Pemesanan">
+  <div class="container">
+    <h2>📞 Pemesanan & Kontak</h2>
 
-  <form class="form">
-    <input type="text" placeholder="Nama">
-    <input type="email" placeholder="Email">
-    <select>
-      <option>Pilih Paket</option>
-      <option>Paket 2 Orang</option>
-      <option>Paket 4 Orang</option>
-    </select>
-    <button class="btn">Kirim</button>
-  </form>
+    <div class="contact-grid">
+      <div>
+        <p>Hubungi pengelola untuk info paket, canyonering, dan pemesanan guide:</p>
+        <p><strong>WhatsApp:</strong> +62 812-3456-7890</p>
+        <p><strong>Instagram:</strong> @curugmuarajaya.official</p>
+      </div>
+
+      <form id="orderForm" class="form" aria-label="Form pemesanan">
+        <input type="text" name="nama" placeholder="Nama lengkap" required>
+        <input type="tel" name="wa" placeholder="Nomor WhatsApp" required>
+        <select name="layanan" required>
+          <option value="">-- Pilih Layanan --</option>
+          <option value="tiket">Tiket Masuk</option>
+          <option value="camping">Camping</option>
+          <option value="canyoneering">Canyoneering (Rp200.000)</option>
+        </select>
+        <button type="submit" class="btn primary">Kirim Permintaan</button>
+      </form>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2025 Kanaga Hill — Majalengka.</p>
+<footer class="site-footer fade-up" role="contentinfo">
+  <div class="container">
+    <p>© 2025 Curug Muara Jaya — Argapura, Majalengka. Informasi dapat berubah; konfirmasi ke pengelola sebelum berangkat.</p>
+  </div>
 </footer>
 
 <script src="script.js"></script>
