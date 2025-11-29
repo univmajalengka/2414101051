@@ -1,15 +1,19 @@
-# Hai Temen-Temen😉👋
+# Haii Teman-Teman😉👋
 Saya *Irfa Atin Rijanah*✨, Mahasiswa dari prodi Informatika fakultas Teknik NPM 2414101051 semester 3 Universitas Majalengka. 
-Proyek ini saya buat untuk memperdalam kemampuan saya dalam membuat website serta untuk memenuhi tugas mata kuliah Pengembangan Aplikasi Berbasis Web💻
+Website Landnic Hijab ini aku kembangkan untuk memperdalam kemampuan dalam membangun website fullstack (frontend–backend), sekaligus sebagai tugas mata kuliah Pengembangan Aplikasi Berbasis Web 💻✨
 
 ## Landnic Hijab - Website Penjualan Hijab
 Landnic Hijab adalah website penjualan hijab berbasis *PHP* yang dibuat untuk mempermudah pengguna dalam melihat dan membeli berbagai jenis hijab secara online.  
 Website ini dikembangkan sebagai proyek latihan untuk memahami konsep dasar pengembangan web, mulai dari *frontend* hingga *backend*.
 
 ## 🚀 Fitur Website
-- 🏠 *Halaman Utama* — Menampilkan daftar produk kacamata.  
-- 🛒 *Keranjang Belanja* — melihat total belanja.  
-- 💳 *Checkout* — Simulasi proses pemesanan produk.  
+- 🏠 Home — Halaman selamat datang
+- 🛍️ Produk — Daftar hijab
+- 🌿 Tentang Landnic — Profil singkat Landnic
+- 📬 Kontak Landnic — Informasi dan form kontak
+- 🛒 Keranjang — Ringkasan belanja
+- 💳 Checkout — Pengisian data pemesanan
+- 🧾 Cetak Nota — Menampilkan & mencetak struk belanja 
   
 
 ## 🧠 Teknologi yang Digunakan
