@@ -1,4 +1,4 @@
-# Haii Teman-Teman😉👋
+# Haii Teman-Teman👋
 Saya *Irfa Atin Rijanah*✨, Mahasiswa dari prodi Informatika fakultas Teknik NPM 2414101051 semester 3 Universitas Majalengka. 
 Website Landnic Hijab ini aku kembangkan untuk memperdalam kemampuan dalam membangun website fullstack (frontend–backend), sekaligus sebagai tugas mata kuliah Pengembangan Aplikasi Berbasis Web 💻✨
 
