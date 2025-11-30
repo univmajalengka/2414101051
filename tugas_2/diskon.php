@@ -49,7 +49,7 @@
 
             echo "
             <div class='struk'>
-                <h3><ion-icon name='receipt-outline'></ion-icon> Struk Belanja</h3>
+                <h3><ion-icon name='receipt-outline'></ion-icon> Hasil Perhitungan</h3>
                 <p>Total Belanja: <span>Rp " . number_format($total,0,',','.') . "</span></p>
                 <p>Diskon: <span>Rp " . number_format($diskon,0,',','.') . "</span></p>
                 <p class='total-bayar'>Total Bayar: <b>Rp " . number_format($bayar,0,',','.') . "</b></p>
